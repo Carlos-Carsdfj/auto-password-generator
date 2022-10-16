@@ -28,12 +28,12 @@ const BackParallax = ({
     }
     setLightning(false)
   }, [storm])
-  const flowerAmount = Math.floor(width / 200)
+  const flowerAmount = Math.floor(width / 160)
   const flowersSize = '0'
     .repeat(flowerAmount)
     .split('')
     .map((n, i) => ({
-      tspacing: i * 180 + 20,
+      tspacing: i * 160 + 20,
       bSpacing: (i / 2) % 2 === 0 ? 30 : 10,
     }))
   const sunMotion = [
@@ -106,13 +106,13 @@ const BackParallax = ({
           }
         />
         {flowersSize.map((flower) => {
-          const duration = Math.random() * 4 + 's'
+          const duration = (Math.random() * 4).toString() + 's'
           return (
             <FlowerHappy
               key={flower.tspacing}
               step={step}
               duration={duration}
-              height="200px"
+              width="160px"
               style={{
                 left: flower.tspacing + 'px',
                 bottom: flower.bSpacing + 'px',
